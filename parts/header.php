@@ -9,6 +9,7 @@
                         <path class="svg-c1" d="M23.7 21.122H6.98a.98.98 0 1 0 0 1.961H23.7a.98.98 0 1 0 0-1.961zm0-7.562H6.98a.981.981 0 1 0 0 1.961H23.7a.981.981 0 1 0 0-1.961zM6.98 7.96H23.7a.981.981 0 1 0 0-1.961H6.98a.981.981 0 1 0 0 1.961z"></path>
                      </svg>
                   </div>
+                  <!-- Mobile Nav Menu -->
                   <ul class="mobileMenu mobileMenuHidden">
                      <li><a href="#">خانه</a></li>
                      <li><a href="#">طراحی وبسایت</a></li>
@@ -21,18 +22,19 @@
                      <li><a href="#">درباره ما</a></li>
                      <li><a href="#">بلاگ</a></li>
                   </ul>
-                  <!-- Header Nav Menu -->
-                  <?php 
-                  // wp_nav_menu( array(
-                  //     'theme_location' => 'header_menu',
-                  // ) );
-                  ?>
                   <div onclick="toggleMobileMenu()" class="backDrop backDropHidden"></div>
                </div>
                <a href="https://tasagency.net/">
                   <img class="logo" src="<?= get_template_directory_uri() . '/dist' ?>/images/logo.svg" alt="Tasagency" />
                </a>
             </div>
+            <!-- Header Nav Menu -->
+            <?php
+            // wp_nav_menu([
+            //    'walker'         => new Header_walker(),
+            //    'theme_location' => 'main-menu',
+            // ]);
+             ?>
             <ul class="menu">
                <li><a href="#">خانه</a></li>
                <div class="dropdownItem">
