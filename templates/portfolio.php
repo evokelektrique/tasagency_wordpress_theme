@@ -25,14 +25,6 @@ get_header();
       if ($posts->have_posts()) : while ($posts->have_posts()) : $posts->the_post();
          $terms = get_the_terms( $post->ID , 'p_category' );
       ?>
-<!--
-      <div class="cat"><?php foreach ( $terms as $term ) {echo $term->name;} ?></div>
-      <div class="entry">
-      <h2><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-      </div>
-      <a href="<?php the_permalink() ?>" title="مشاهده نمونه کار <?php the_title(); ?>">مشاهده</a>
-      </article>
- -->
       <!-- Portfolio box -->
       <div class="portfolioBox">
          <img class="thumbnail" src="<?php the_post_thumbnail_url(''); ?>" alt="<?php the_title(); ?>" />
