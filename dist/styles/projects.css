@@ -1,0 +1,148 @@
+.projects-header-section {
+	width: 100%;
+	min-height: 351px;
+	background: #FEF4E9;
+	display: flex;
+	align-items: center;
+}
+
+.projects-header-section .projects-header-container {
+	width: 100%;
+	padding: 0px 150px;
+	position: relative;
+}
+
+.projects-header-section .projects-header-container h1 {
+	font-family: 'Yekan Bakh Fat';
+	font-weight: 1000;
+	margin-bottom: 16px;
+}
+
+.projects-header-section .projects-header-container h1 span {
+	color: #FF4B23;
+}
+
+.projects-header-section .projects-header-container::after {
+	content: '';
+	position: absolute;
+	top: 60px;
+	left: 50px;
+	background-image: url("../images/portfolio-header.svg");
+	width: 380px;
+	height: 380px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.projects-content-container {
+	margin: 160px 0px;
+}
+
+.portfolios {
+	max-width: 1110px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 0 auto;
+}
+
+.portfolios .portfolioBox {
+	max-width: 350px;
+	background: #FFFFFF;
+	border: 1px solid #E1E2EB;
+	box-sizing: border-box;
+	border-radius: 24px;
+	padding: 16px;
+	overflow: hidden;
+	margin: 30px 0px;
+}
+
+.portfolios .portfolioBox .thumbnail {
+	width: 100%;
+	border-radius: 16px;
+}
+
+.portfolios .portfolioBox .categoryTag {
+	display: flex;
+	align-items: center;
+	margin-top: 12px;
+}
+
+.portfolios .portfolioBox .categoryTag img {
+	width: 24px;
+	height: 24px;
+	margin-left: 5px;
+}
+
+.portfolios .portfolioBox h6 {
+	margin: 16px 0px;
+}
+
+.portfolios .portfolioBox button {
+	padding: 0;
+}
+
+.postName {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.postName:hover{
+  color: #FF4B23 !important;
+}
+
+@media screen and (max-width: 1024px) {
+	.projects-header-container {
+		padding: 0px 50px !important;
+	}
+
+	.projects-header-container::after {
+		top: 70px;
+		left: 0px !important;
+		width: 330px !important;
+		height: 330px !important;
+	}
+
+	.projects-header-container h1 {
+		font-size: 32px;
+	}
+
+	.projects-header-container p {
+		max-width: 550px;
+		font-size: 15px;
+	}
+
+	.portfolios {
+		max-width: 100%;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.projects-header-container {
+		padding: 0px 50px !important;
+	}
+
+	.projects-header-container::after {
+		top: 100px !important;
+		left: 0px !important;
+		width: 330px !important;
+		height: 330px !important;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.projects-header-container::after {
+		top: 190px !important;
+		width: 230px !important;
+		height: 230px !important;
+	}
+
+	.portfolios {
+		justify-content: center;
+	}
+
+	.portfolioBox {
+		max-width: 100%;
+		width: 100%;
+	}
+}

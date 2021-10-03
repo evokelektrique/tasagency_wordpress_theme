@@ -1,0 +1,391 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	direction: rtl;
+}
+
+body {
+	overflow-x: hidden !important;
+	font-family: 'IRANSans-web';
+}
+
+.container {
+	max-width: 1320px;
+	padding: 0px 12px;
+	margin: 0 auto;
+}
+
+/* Design System */
+@media (max-width: 576px) {
+	.container {
+		padding: 0px 12px !important;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		padding: 0px 36px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.container {
+		overflow-x: hidden !important;
+	}
+}
+
+@media (max-width: 1366px) {
+	.container {
+		max-width: 1140px;
+    padding: 0px 12px;
+	}
+}
+
+.primary-color {
+	background-color: #FF4B23 !important;
+}
+
+.secondary-color {
+	background-color: #FEE8D3 !important;
+}
+
+.primary-dark {
+	color: #212345 !important;
+}
+
+.primary-text {
+	color: #FF4B23 !important;
+}
+
+.description-color {
+	color: #535879 !important;
+}
+
+.white-color {
+	color: white !important;
+}
+
+.small-text-color {
+	color: #999BB3 !important;
+}
+
+.dark-4 {
+	color: #B8B9CC !important;
+}
+
+.cta-text {
+	color: #FF4B23 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Yekan Bakh';
+}
+
+p, input, ul, li, textarea {
+	font-family: 'IRANSans-web';
+}
+
+
+button, a, label {
+	font-family: 'Yekan Bakh';
+}
+
+h1 {
+	font-size: 42px;
+	line-height: 64px;
+	font-weight: 900;
+}
+
+h2 {
+	font-size: 32px;
+	line-height: 48px;
+	font-weight: 700;
+}
+
+h3 {
+	font-size: 24px;
+	line-height: 40px;
+	font-weight: 700;
+}
+
+h4 {
+	font-size: 20px;
+	line-height: 36px;
+	font-weight: 700;
+}
+
+h5 {
+	font-size: 18px;
+	line-height: 32px;
+	font-weight: 600;
+}
+
+h6 {
+	font-size: 18px;
+	line-height: 32px;
+	font-weight: 600;
+}
+
+p {
+	font-size: 16px;
+	line-height: 30px;
+	font-weight: 300;
+}
+
+.p-small {
+	font-size: 14px;
+	line-height: 28px;
+	font-weight: 400;
+	color: #535879;
+}
+
+.p-small p {
+	font-size: 14px !important;
+	line-height: 24px !important;
+	font-weight: 400 !important;
+}
+
+.label {
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: 300;
+}
+
+.chips {
+	font-size: 12px;
+	line-height: 20px;
+	font-weight: 300;
+}
+
+button {
+	font-size: 18px;
+	line-height: 24px;
+	background: none;
+	border: none;
+	outline: none;
+	padding: 17px 32px 15px;
+	border-radius: 16px;
+	cursor: pointer;
+}
+
+label {
+	font-size: 16px;
+}
+
+a {
+	font-size: 18px;
+	line-height: 24px;
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	user-drag: none !important;
+	user-select: none !important;
+	-moz-user-select: none !important;
+	-webkit-user-drag: none !important;
+	-webkit-user-select: none !important;
+	-ms-user-select: none !important;
+}
+
+.first-head-text {
+	margin-bottom: 8px !important;
+}
+
+.main-head-text {
+	margin-bottom: 16px !important;
+}
+
+.description-text {
+	margin-bottom: 48px !important;
+}
+
+.first-head-text p {
+	margin-bottom: 8px !important;
+}
+
+.main-head-text p {
+	margin-bottom: 16px !important;
+}
+
+.description-text p {
+	margin-bottom: 48px !important;
+}
+
+.swiper-wrapper {
+	margin: 24px 0px !important;
+}
+
+.blogs-swiper-button-next::after, .blogs-swiper-button-prev::after {
+	content: none !important;
+}
+
+.blogs-swiper-button-prev {
+	right: 0px !important;
+	left: auto !important;
+	top: 60% !important;
+}
+
+.blogs-swiper-button-next {
+	left: 0px !important;
+	right: auto !important;
+	top: 60% !important;
+}
+
+.popular-blogs-swiper-button-next::after, .popular-blogs-swiper-button-prev::after {
+	content: none !important;
+}
+
+.popular-blogs-swiper-button-prev {
+	right: -50px !important;
+	left: auto !important;
+	top: 60% !important;
+}
+
+.popular-blogs-swiper-button-next {
+	left: -50px !important;
+	right: auto !important;
+	top: 60% !important;
+}
+
+.client-slider {
+	overflow-x: hidden;
+}
+
+.client-slider .swiper-container {
+	overflow-y: visible;
+	margin: 75px 0px;
+	overflow: visible !important;
+}
+
+@media (max-width: 576px) {
+	.client-slider .swiper-container {
+		margin: 80px 0px;
+	}
+
+	.blogs-swiper-button-prev {
+		right: 10px !important;
+		left: auto !important;
+		top: 60% !important;
+	}
+
+	.blogs-swiper-button-next {
+		left: 10px !important;
+		right: auto !important;
+		top: 60% !important;
+	}
+	/*TODO: Reduce Slider size*/
+	/* @media screen and (min-width: 1440px) {
+		.blogs-swiper-container {
+			max-width: 1320px;
+		}
+	} */
+
+	h1 {
+		font-size: 32px;
+		line-height: 48px;
+		font-weight: 900;
+	}
+
+	h2 {
+		font-size: 28px;
+		line-height: 44px;
+		font-weight: 800;
+	}
+
+	h5 {
+		font-size: 18px;
+		line-height: 32px;
+		font-weight: normal;
+	}
+
+	h6 {
+		font-size: 16px;
+		line-height: 28px;
+		font-weight: normal;
+	}
+
+	p {
+		font-size: 14px;
+		line-height: 28px;
+		font-weight: 300;
+	}
+
+	.p-small {
+		font-size: 12px;
+		line-height: 21px;
+		font-weight: 300;
+	}
+
+	.label {
+		font-size: 11px;
+		line-height: 20px;
+		font-weight: 300;
+	}
+
+	.chips {
+		font-size: 10px;
+		line-height: 18px;
+		font-weight: 300;
+	}
+
+	button {
+		font-size: 16px;
+		line-height: 24px;
+		font-family: 'Yekan Bakh' !important;
+		border: none;
+		outline: none;
+		padding: 12px 24px;
+		border-radius: 16px;
+	}
+
+	label {
+		font-size: 14px;
+	}
+
+	a {
+		font-size: 16px;
+		line-height: 24px;
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.description-text {
+		margin-bottom: 48px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.main-head-text {
+		margin-bottom: 8px;
+	}
+}
+
+.primaryBtn {
+	background-color: #FF4B23;
+	text-align: center;
+	color: #FFFFFF !important;
+	transition: 0.2s;
+}
+
+.primaryBtn:hover {
+	box-shadow: 0px 8px 32px rgba(255, 73, 35, 0.24);
+}
+
+.btnJumper:hover {
+	transform: translateY(-5px);
+}
+
+.secondaryBtn {
+	background-color: #FEE8D3;
+	color: #FF4923;
+	justify-content: center;
+	align-items: center;
+}

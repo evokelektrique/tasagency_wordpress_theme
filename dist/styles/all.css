@@ -1,0 +1,11 @@
+@import url('../fonts/iransans/style.css');
+@import url('../fonts/yekanbakh/stylesheet.css');
+@import url('./globals.css');
+@import url('./header.css');
+@import url('./footer.css');
+@import url('./home.css');
+@import url('./about.css');
+@import url('./news.css');
+@import url('./projects.css');
+@import url('./project.css');
+@import url('./singleblog.css');
