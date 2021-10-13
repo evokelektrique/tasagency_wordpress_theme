@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<?php setPostViews(get_the_ID()); ?>
 
 <div class="container portfolio-container">
    <div class="single-post-portfolio-header">

@@ -471,6 +471,7 @@
 	background: #F7F7F7;
 	border-radius: 16px;
 	padding: 23px;
+   margin-bottom: 15px;
 }
 
 .comments .comment .profile {
@@ -503,7 +504,7 @@
 .comments .reply {
 	display: flex;
 	align-items: flex-start;
-	margin: 15px 0px;
+	margin: 0 0px;
 }
 
 .comments .reply .replyIcon {

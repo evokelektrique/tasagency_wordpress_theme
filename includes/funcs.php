@@ -100,3 +100,61 @@ function exclude_pages_from_search($query) {
 }
 
 
+
+// Comment
+function tasagency_comment($comment, $args, $depth) {
+
+
+   $GLOBALS['comment'] = $comment;
+   if ($depth > 1):
+   ?>
+   <div class="reply">
+   <img src="<?= get_template_directory_uri() . "/dist" ?>/images/reply.svg" class="replyIcon" alt="" />
+   <?php endif; ?>
+
+   <div class="comment" id="comment-<?php comment_ID(); ?>" style="width: 100%">
+      <div class="profile">
+         <?php echo get_avatar($comment, 60 ); ?>
+         <div class="profileContent">
+            <h6 class="primary-dark styles.name"><?= get_comment_author() ?></h6>
+            <p class="small-text-color p-small styles.date"><?php printf(__('%1$s'), get_comment_date(),  false) ?></p>
+         </div>
+      </div>
+
+      <?php if ($comment->comment_approved == '0') : ?>
+         <em class="waiting"><?php _e('Your comment is awaiting moderation.') ?></em>
+         <br />
+      <?php endif; ?>
+
+      <p class="commentText p-small small-text-color">
+         <?php comment_text() ?>
+      </p>
+      <div class="reply">
+         <?php
+         $args["reply_text"] = "پاسخ";
+         comment_reply_link(array_merge(
+               $args,
+               array('depth' => $depth, 'max_depth' => $args['max_depth'])
+         ))
+         ?>
+         <?php edit_comment_link(__('ویرایش'),'  ','') ?>
+      </div>
+   </div>
+   <?php if ($depth > 1): ?>
+   </div>
+   <?php
+   endif;
+}
+
+function setPostViews($postID) {
+    $countKey = 'post_views_count';
+    $count = get_post_meta($postID, $countKey, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $countKey);
+        add_post_meta($postID, $countKey, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $countKey, $count);
+    }
+}
