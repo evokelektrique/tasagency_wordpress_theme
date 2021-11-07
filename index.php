@@ -134,7 +134,7 @@
   <div class="content">
     <h2 class="main-head-text">نمونه کارهای ما</h2>
     <p class="description-text">
-      در بازاری که همه حرف میزنند، ترجیح میدهیم چیزی نگوییم، چرا که در انتها ما با کارهایمان قضاوت میشویم نه حرف هایمان 
+      در بازاری که همه حرف میزنند، ترجیح میدهیم چیزی نگوییم، چرا که در انتها ما با کارهایمان قضاوت میشویم نه حرف هایمان
     </p>
     <a href="#"><button class="primaryBtn">مشاهده همه</button></a>
     <div class="btnSliders">
@@ -148,57 +148,32 @@
   </div>
   <div class="swiper portfolios-slider-container">
     <div class="swiper-wrapper">
+      <?php
+      $posts = new WP_Query(array(
+      'post_type' => 'portfolio',
+      'posts_per_page' => 6,
+      ));
+      if ($posts->have_posts()) : while ($posts->have_posts()) : $posts->the_post();
+         $terms = get_the_terms( $post->ID , 'p_category' );
+      ?>
       <div class="swiper-slide">
         <div class="portfolio-box-container">
           <div class="postThumbnail">
-            <img src="<?= get_template_directory_uri() . '/dist' ?>/images/portfolio-1.png" alt="{portfolioName}" />
-            <p class="chips">{category}</p>
+            <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" />
+            <p class="chips"><?= $terms[0]->name ?></p>
           </div>
           <div class="postContent">
-            <a href="#">
-              <h4 class="postName primary-dark">{portfolioName}</h4>
+            <a href="<?= get_the_permalink(); ?>">
+              <h4 class="postName primary-dark"><?php the_title(); ?></h4>
             </a>
             <div class="main-head-text p-small description-color">
-              text description
+              <?php the_excerpt() ?>
             </div>
-            <a class="cta-text">مشاهده</a>
+            <a href="<?= get_the_permalink(); ?>" class="cta-text">مشاهده</a>
           </div>
         </div>
       </div>
-      <div class="swiper-slide">
-        <div class="portfolio-box-container">
-          <div class="postThumbnail">
-            <img src="<?= get_template_directory_uri() . '/dist' ?>/images/portfolio-1.png" alt="{portfolioName}" />
-            <p class="chips">{category}</p>
-          </div>
-          <div class="postContent">
-            <a href="#">
-              <h4 class="postName primary-dark">{portfolioName}</h4>
-            </a>
-            <div class="main-head-text p-small description-color">
-              text description
-            </div>
-            <a class="cta-text">مشاهده</a>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="portfolio-box-container">
-          <div class="postThumbnail">
-            <img src="<?= get_template_directory_uri() . '/dist' ?>/images/portfolio-1.png" alt="{portfolioName}" />
-            <p class="chips">{category}</p>
-          </div>
-          <div class="postContent">
-            <a href="#">
-              <h4 class="postName primary-dark">{portfolioName}</h4>
-            </a>
-            <div class="main-head-text p-small description-color">
-              text description
-            </div>
-            <a class="cta-text">مشاهده</a>
-          </div>
-        </div>
-      </div>
+      <?php endwhile; else: ?><?php endif; ?>
     </div>
   </div>
 </div>
@@ -210,102 +185,39 @@
   </div>
   <div class="swiper blogs-slider-container">
     <div class="swiper-wrapper">
+      <?php
+      $posts = new WP_Query(array(
+      'posts_per_page' => 6,
+      ));
+      if ($posts->have_posts()) : while ($posts->have_posts()) : $posts->the_post();
+         $terms = get_the_terms( $post->ID , 'category' );
+      ?>
       <div class="swiper-slide">
         <div class="blog-post-box-container">
           <div class="postThumbnail">
-            <img src="<?= get_template_directory_uri() . '/dist' ?>/images/portfolio-1.png" alt="" />
+            <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" />
           </div>
           <div class="details">
             <div>
               <img src="<?= get_template_directory_uri() . '/dist' ?>/images/Time.svg" alt="" />
-              <p class="label small-text-color">2 دقیقه</p>
+              <p class="label small-text-color"><?php echo esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ); ?></p>
             </div>
             <div>
               <img src="<?= get_template_directory_uri() . '/dist' ?>/images/Calendar.svg" alt="" />
-              <p class="label small-text-color">{blogDate()}</p>
+              <p class="label small-text-color"><?= get_the_date(); ?></p>
             </div>
           </div>
           <div class="postContent">
-            <a href="#"><h6 class="postName primary-dark">{postName}</h6></a>
+            <a href="<?= get_the_permalink(); ?>"><h6 class="postName primary-dark"><?php the_title(); ?></h6></a>
             <div class="main-head-text p-small description-color">
-              .....
+              <?php the_excerpt() ?>
             </div>
-            <a href="#" class="cta-text">ادامه مطلب</a>
+            <a href="<?= get_the_permalink(); ?>" class="cta-text">ادامه مطلب</a>
           </div>
         </div>
       </div>
-      <div class="swiper-slide">
-        <div class="blog-post-box-container">
-          <div class="postThumbnail">
-            <img src="<?= get_template_directory_uri() . '/dist' ?>/images/portfolio-1.png" alt="" />
-          </div>
-          <div class="details">
-            <div>
-              <img src="<?= get_template_directory_uri() . '/dist' ?>/images/Time.svg" alt="" />
-              <p class="label small-text-color">2 دقیقه</p>
-            </div>
-            <div>
-              <img src="<?= get_template_directory_uri() . '/dist' ?>/images/Calendar.svg" alt="" />
-              <p class="label small-text-color">{blogDate()}</p>
-            </div>
-          </div>
-          <div class="postContent">
-            <a href="#"><h6 class="postName primary-dark">{postName}</h6></a>
-            <div class="main-head-text p-small description-color">
-              .....
-            </div>
-            <a href="#" class="cta-text">ادامه مطلب</a>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="blog-post-box-container">
-          <div class="postThumbnail">
-            <img src="<?= get_template_directory_uri() . '/dist' ?>/images/portfolio-1.png" alt="" />
-          </div>
-          <div class="details">
-            <div>
-              <img src="<?= get_template_directory_uri() . '/dist' ?>/images/Time.svg" alt="" />
-              <p class="label small-text-color">2 دقیقه</p>
-            </div>
-            <div>
-              <img src="<?= get_template_directory_uri() . '/dist' ?>/images/Calendar.svg" alt="" />
-              <p class="label small-text-color">{blogDate()}</p>
-            </div>
-          </div>
-          <div class="postContent">
-            <a href="#"><h6 class="postName primary-dark">{postName}</h6></a>
-            <div class="main-head-text p-small description-color">
-              .....
-            </div>
-            <a href="#" class="cta-text">ادامه مطلب</a>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="blog-post-box-container">
-          <div class="postThumbnail">
-            <img src="<?= get_template_directory_uri() . '/dist' ?>/images/portfolio-1.png" alt="" />
-          </div>
-          <div class="details">
-            <div>
-              <img src="<?= get_template_directory_uri() . '/dist' ?>/images/Time.svg" alt="" />
-              <p class="label small-text-color">2 دقیقه</p>
-            </div>
-            <div>
-              <img src="<?= get_template_directory_uri() . '/dist' ?>/images/Calendar.svg" alt="" />
-              <p class="label small-text-color">{blogDate()}</p>
-            </div>
-          </div>
-          <div class="postContent">
-            <a href="#"><h6 class="postName primary-dark">{postName}</h6></a>
-            <div class="main-head-text p-small description-color">
-              .....
-            </div>
-            <a href="#" class="cta-text">ادامه مطلب</a>
-          </div>
-        </div>
-      </div>
+      <?php endwhile; else: ?><?php endif; ?>
+
     </div>
   </div>
   <div class="prevArrow blogs-swiper-button-prev swiper-button-next">
